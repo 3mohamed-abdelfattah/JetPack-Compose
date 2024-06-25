@@ -2,8 +2,10 @@ package com.example.jetpack_compose.view
 
 //noinspection UsingMaterialAndMaterial3Libraries
 import android.annotation.SuppressLint
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -13,6 +15,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.OutlinedTextField
@@ -27,6 +31,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Black
+import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -139,6 +144,53 @@ fun LoginPage(navController: NavController) {
                             visualTransformation = if (passwordVisibility.value) VisualTransformation.None else PasswordVisualTransformation()
                         )
 
+                        Spacer(modifier = Modifier.padding(20.dp))
+
+                        Button(
+                            onClick = {
+                                when {
+                                    emailVal.value.isEmpty() -> {
+                                        Toast.makeText(
+                                            context,
+                                            "Please enter your Email!!",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                    }
+
+                                    passwordVal.value.isEmpty() -> {
+                                        Toast.makeText(
+                                            context,
+                                            "Please enter your Password!!",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                    }
+
+                                    else -> {
+                                        Toast.makeText(
+                                            context,
+                                            "Login Successful",
+                                            Toast.LENGTH_SHORT
+                                        )
+                                            .show()
+                                    }
+                                }
+                            },
+                            colors = ButtonDefaults.buttonColors(backgroundColor = White),
+                            modifier = Modifier
+                                .fillMaxWidth(0.8f)
+                                .height(50.dp)
+                        ) {
+                            Text(text = "Submit", fontSize = 20.sp, color = Black)
+                        }
+
+                        Spacer(modifier = Modifier.padding(20.dp))
+
+                        Text(
+                            text = "Don't have an account? Sign Up",
+                            color = Black,
+                            modifier = Modifier.clickable { navController.navigate("register_page") })
+
+                        Spacer(modifier = Modifier.padding(20.dp))
 
                     }
 
