@@ -15,15 +15,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
-import androidx.compose.material.OutlinedTextField
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TextFieldDefaults
-import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -43,7 +34,15 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.jetpack_compose.R
 import com.example.jetpack_compose.ui.theme.Purple80
-
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
+import androidx.compose.material.OutlinedTextField
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
+import androidx.compose.material.TextFieldDefaults
+import androidx.compose.material.rememberScaffoldState
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
@@ -58,7 +57,7 @@ fun LoginPage(navController: NavController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = Color.White), contentAlignment = Alignment.Center
+            .background(color = White), contentAlignment = Alignment.Center
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -66,14 +65,14 @@ fun LoginPage(navController: NavController) {
             modifier = Modifier.fillMaxWidth()
         ) {
             Box(
-                modifier = Modifier.background(Color.White),
+                modifier = Modifier.background(White),
                 contentAlignment = Alignment.TopCenter,
             ) {
                 Image(
                     modifier = Modifier
                         .width(400.dp)
                         .height(350.dp),
-                    painter = painterResource(R.drawable.login),
+                    painter = painterResource(R.drawable.login2),
                     contentDescription = "Login Image",
                     contentScale = ContentScale.Fit
                 )
@@ -88,7 +87,7 @@ fun LoginPage(navController: NavController) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .background(
-                            Color.White
+                            White
                         )
                         .padding(10.dp)
                 ) {
