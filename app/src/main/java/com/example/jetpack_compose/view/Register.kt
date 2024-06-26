@@ -170,6 +170,9 @@ fun RegisterPage(navController: NavController) {
                             trailingIcon = {
                                 IconButton(onClick = {
                                     passwordVisibility.value = !passwordVisibility.value
+                                    confirmPasswordVisibility.value =
+                                        !confirmPasswordVisibility.value
+
                                 }) {
                                     Icon(
                                         painter = painterResource(R.drawable.baseline_key_24),
@@ -194,18 +197,6 @@ fun RegisterPage(navController: NavController) {
                             label = { Text(text = "Confirm Password") },
                             placeholder = { Text(text = "Enter Password Confirmation") },
                             singleLine = true,
-                            trailingIcon = {
-                                IconButton(onClick = {
-                                    confirmPasswordVisibility.value =
-                                        !confirmPasswordVisibility.value
-                                }) {
-                                    Icon(
-                                        painter = painterResource(R.drawable.baseline_key_24),
-                                        contentDescription = "Password Visibility",
-                                        tint = if (confirmPasswordVisibility.value) Purple800 else Gray
-                                    )
-                                }
-                            },
                             modifier = Modifier
                                 .fillMaxWidth(0.8f)
                                 .padding(5.dp),
