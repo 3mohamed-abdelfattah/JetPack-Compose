@@ -40,19 +40,24 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.airbnb.lottie.compose.LottieAnimation
 import com.example.jetpack_compose.R
 import com.example.jetpack_compose.ui.theme.Purple800
 import com.example.jetpack_compose.ui.theme.PurpleGrey80
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun LoginPage(navController: NavController) {
+fun RegisterPage(navController: NavController) {
 
     val context = LocalContext.current
     val scaffoldState = rememberScaffoldState()
+    val nameVal = remember { mutableStateOf("") }
     val emailVal = remember { mutableStateOf("") }
+    val phoneVal = remember { mutableStateOf("") }
     val passwordVal = remember { mutableStateOf("") }
+    val confirmPasswordVal = remember { mutableStateOf("") }
     val passwordVisibility = remember { mutableStateOf(false) }
+    val confirmPasswordVisibility = remember { mutableStateOf(false) }
 
     Box(
         modifier = Modifier
@@ -70,13 +75,10 @@ fun LoginPage(navController: NavController) {
                     .padding(45.dp),
                 contentAlignment = Alignment.TopCenter,
             ) {
-                Image(
+                LottieAnimationRegister(
                     modifier = Modifier
                         .width(400.dp)
-                        .height(350.dp),
-                    painter = painterResource(R.drawable.login),
-                    contentDescription = "Login Image",
-                    contentScale = ContentScale.Fit
+                        .height(350.dp)
                 )
             }
 
@@ -94,7 +96,7 @@ fun LoginPage(navController: NavController) {
                         .padding(1.dp)
                 ) {
                     Text(
-                        text = "Welcome Back!",
+                        text = "Create an Account !",
                         fontSize = 30.sp,
                         fontWeight = FontWeight.Bold,
                         color = Black
@@ -102,7 +104,7 @@ fun LoginPage(navController: NavController) {
                     Spacer(modifier = Modifier.padding(5.dp))
 
                     Text(
-                        text = "Log in to continue your journey with us.",
+                        text = "Join our community and enjoy exclusive features !",
                         fontSize = 18.sp,
                         fontWeight = FontWeight.W500,
                         color = Black,
@@ -111,6 +113,51 @@ fun LoginPage(navController: NavController) {
                     Spacer(modifier = Modifier.padding(20.dp))
 
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        // Name Field
+                        OutlinedTextField(
+                            value = nameVal.value,
+                            onValueChange = { nameVal.value = it },
+                            label = { Text(text = "Name") },
+                            placeholder = { Text(text = "Enter Name") },
+                            singleLine = true,
+                            modifier = Modifier
+                                .fillMaxWidth(0.8f)
+                                .padding(16.dp),
+                            colors = TextFieldDefaults.outlinedTextFieldColors(
+                                unfocusedBorderColor = Gray,
+                                textColor = Black
+                            )
+                        )
+                        // Email Field
+                        OutlinedTextField(
+                            value = emailVal.value,
+                            onValueChange = { emailVal.value = it },
+                            label = { Text(text = "Email") },
+                            placeholder = { Text(text = "Enter Email") },
+                            singleLine = true,
+                            modifier = Modifier
+                                .fillMaxWidth(0.8f)
+                                .padding(16.dp),
+                            colors = TextFieldDefaults.outlinedTextFieldColors(
+                                unfocusedBorderColor = Gray,
+                                textColor = Black
+                            )
+                        )
+                        // PhoneNumber Field
+                        OutlinedTextField(
+                            value = emailVal.value,
+                            onValueChange = { emailVal.value = it },
+                            label = { Text(text = "Email") },
+                            placeholder = { Text(text = "Enter Email") },
+                            singleLine = true,
+                            modifier = Modifier
+                                .fillMaxWidth(0.8f)
+                                .padding(16.dp),
+                            colors = TextFieldDefaults.outlinedTextFieldColors(
+                                unfocusedBorderColor = Gray,
+                                textColor = Black
+                            )
+                        )
                         OutlinedTextField(
                             value = emailVal.value,
                             onValueChange = { emailVal.value = it },
