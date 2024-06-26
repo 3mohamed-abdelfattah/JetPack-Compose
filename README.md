@@ -69,15 +69,15 @@ dependencies {
 ## Screenshots
 Here are some screenshots showcasing the UI App:
 
-<img src="![image](https://github.com/3mohamed-abdelfattah/JetPack-Compose/assets/142848460/4da21fba-b788-4f41-94cc-565a8715b208)" alt="image" width="300"/>
+<img src="https://github.com/3mohamed-abdelfattah/JetPack-Compose/assets/142848460/4da21fba-b788-4f41-94cc-565a8715b208" alt="image" width="300"/>
 
-<img src="mohamed![image](https://github.com/3mohamed-abdelfattah/JetPack-Compose/assets/142848460/416a9780-d7fb-4950-8365-de2452ee4e2a)" alt="image" width="300"/>
+<img src="https://github.com/3mohamed-abdelfattah/JetPack-Compose/assets/142848460/416a9780-d7fb-4950-8365-de2452ee4e2a" alt="image" width="300"/>
 
-<img src="![image](https://github.com/3mohamed-abdelfattah/JetPack-Compose/assets/142848460/f48dc3d8-7374-45c6-896b-a34e607051f7)" alt="image" width="300"/>
+<img src="https://github.com/3mohamed-abdelfattah/JetPack-Compose/assets/142848460/f48dc3d8-7374-45c6-896b-a34e607051f7" alt="image" width="300"/>
 
-<img src="![image](https://github.com/3mohamed-abdelfattah/JetPack-Compose/assets/142848460/ab9302e5-a402-4aab-9281-3a91092b69dd)" alt="image" width="300"/>
+<img src="https://github.com/3mohamed-abdelfattah/JetPack-Compose/assets/142848460/ab9302e5-a402-4aab-9281-3a91092b69dd" alt="image" width="300"/>
 
-<img src="![image](https://github.com/3mohamed-abdelfattah/JetPack-Compose/assets/142848460/a1eab835-4bce-4121-8a93-4d6256e59696)" alt="image" width="300"/>
+<img src="https://github.com/3mohamed-abdelfattah/JetPack-Compose/assets/142848460/a1eab835-4bce-4121-8a93-4d6256e59696" alt="image" width="300"/>
 
 
 
