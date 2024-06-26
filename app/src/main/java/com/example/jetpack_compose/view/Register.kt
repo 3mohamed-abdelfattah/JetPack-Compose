@@ -2,6 +2,7 @@ package com.example.jetpack_compose.view
 
 import android.annotation.SuppressLint
 import android.widget.Toast
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -30,6 +31,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color.Companion.Black
 import androidx.compose.ui.graphics.Color.Companion.Gray
 import androidx.compose.ui.graphics.Color.Companion.White
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -72,10 +74,13 @@ fun RegisterPage(navController: NavController) {
                     .padding(5.dp),
                 contentAlignment = Alignment.TopCenter,
             ) {
-                LottieAnimationRegister(
+                Image(
                     modifier = Modifier
-                        .width(350.dp)
-                        .height(250.dp)
+                        .width(400.dp)
+                        .height(350.dp),
+                    painter = painterResource(R.drawable.register),
+                    contentDescription = "Gif Image",
+                    contentScale = ContentScale.Fit
                 )
             }
 
