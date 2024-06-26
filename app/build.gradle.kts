@@ -67,11 +67,9 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-
     val composeBom = platform("androidx.compose:compose-bom:2024.06.00")
     implementation(composeBom)
     androidTestImplementation(composeBom)
-
     // Choose one of the following:
     // Material Design 3
     implementation(libs.material3)
@@ -82,15 +80,12 @@ dependencies {
     // or only import the main APIs for the underlying toolkit systems,
     // such as input and measurement/layout
     implementation(libs.ui)
-
     // Android Studio Preview support
     implementation(libs.ui.tooling.preview)
     debugImplementation(libs.ui.tooling)
-
     // UI Tests
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.test.manifest)
-
     // Optional - Included automatically by material, only add when you need
     // the icons but not the material library (e.g. when using Material3 or a
     // custom design system based on Foundation)
@@ -99,7 +94,6 @@ dependencies {
     implementation(libs.androidx.material.icons.extended)
     // Optional - Add window size utils
     implementation("androidx.compose.material3:material3-window-size-class")
-
     // Optional - Integration with activities
     implementation(libs.androidx.activity.compose)
     // Optional - Integration with ViewModels
@@ -108,15 +102,10 @@ dependencies {
     implementation(libs.androidx.runtime.livedata)
     // Optional - Integration with RxJava
     implementation(libs.androidx.runtime.rxjava2)
-
     //Navigation with Compose
     implementation(libs.androidx.navigation.compose)
-
-
     implementation(libs.lottie.compose)
     implementation(libs.lottie)
-
-
 
 
 }
