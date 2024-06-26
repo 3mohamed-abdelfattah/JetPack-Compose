@@ -2,7 +2,6 @@ package com.example.jetpack_compose.view
 
 import android.annotation.SuppressLint
 import android.widget.Toast
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -31,7 +30,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color.Companion.Black
 import androidx.compose.ui.graphics.Color.Companion.Gray
 import androidx.compose.ui.graphics.Color.Companion.White
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -40,7 +38,6 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.airbnb.lottie.compose.LottieAnimation
 import com.example.jetpack_compose.R
 import com.example.jetpack_compose.ui.theme.Purple800
 import com.example.jetpack_compose.ui.theme.PurpleGrey80
@@ -145,10 +142,10 @@ fun RegisterPage(navController: NavController) {
                         )
                         // PhoneNumber Field
                         OutlinedTextField(
-                            value = emailVal.value,
-                            onValueChange = { emailVal.value = it },
-                            label = { Text(text = "Email") },
-                            placeholder = { Text(text = "Enter Email") },
+                            value = phoneVal.value,
+                            onValueChange = { phoneVal.value = it },
+                            label = { Text(text = "Number") },
+                            placeholder = { Text(text = "Enter Number") },
                             singleLine = true,
                             modifier = Modifier
                                 .fillMaxWidth(0.8f)
@@ -158,21 +155,7 @@ fun RegisterPage(navController: NavController) {
                                 textColor = Black
                             )
                         )
-                        OutlinedTextField(
-                            value = emailVal.value,
-                            onValueChange = { emailVal.value = it },
-                            label = { Text(text = "Email") },
-                            placeholder = { Text(text = "Enter Email") },
-                            singleLine = true,
-                            modifier = Modifier
-                                .fillMaxWidth(0.8f)
-                                .padding(16.dp),
-                            colors = TextFieldDefaults.outlinedTextFieldColors(
-                                unfocusedBorderColor = Gray,
-                                textColor = Black
-                            )
-                        )
-
+                        // Password Field
                         OutlinedTextField(
                             value = passwordVal.value,
                             onValueChange = { passwordVal.value = it },
@@ -199,36 +182,75 @@ fun RegisterPage(navController: NavController) {
                             ),
                             visualTransformation = if (passwordVisibility.value) VisualTransformation.None else PasswordVisualTransformation()
                         )
+                        // Password Confirmation Field
+                        OutlinedTextField(
+                            value = confirmPasswordVal.value,
+                            onValueChange = { confirmPasswordVal.value = it },
+                            label = { Text(text = "Confirm Password") },
+                            placeholder = { Text(text = "Enter Password Confirmation") },
+                            singleLine = true,
+                            trailingIcon = {
+                                IconButton(onClick = {
+                                    confirmPasswordVisibility.value =
+                                        !confirmPasswordVisibility.value
+                                }) {
+                                    Icon(
+                                        painter = painterResource(R.drawable.baseline_key_24),
+                                        contentDescription = "Password Visibility",
+                                        tint = if (confirmPasswordVisibility.value) Purple800 else Gray
+                                    )
+                                }
+                            },
+                            modifier = Modifier
+                                .fillMaxWidth(0.8f)
+                                .padding(16.dp),
+                            colors = TextFieldDefaults.outlinedTextFieldColors(
+                                unfocusedBorderColor = Gray,
+                                textColor = Black,
+                            ),
+                            visualTransformation = if (confirmPasswordVisibility.value) VisualTransformation.None else PasswordVisualTransformation()
+                        )
 
                         Spacer(modifier = Modifier.padding(20.dp))
 
                         Button(
                             onClick = {
-                                when {
-                                    emailVal.value.isEmpty() -> {
-                                        Toast.makeText(
-                                            context,
-                                            "Please enter your Email !",
-                                            Toast.LENGTH_SHORT
-                                        ).show()
-                                    }
-
-                                    passwordVal.value.isEmpty() -> {
-                                        Toast.makeText(
-                                            context,
-                                            "Please enter your Password !",
-                                            Toast.LENGTH_SHORT
-                                        ).show()
-                                    }
-
-                                    else -> {
-                                        Toast.makeText(
-                                            context,
-                                            "Login Successful",
-                                            Toast.LENGTH_SHORT
-                                        )
-                                            .show()
-                                    }
+                                if (nameVal.value.isEmpty()) {
+                                    Toast.makeText(
+                                        context,
+                                        "Please enter the name !",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                } else if (emailVal.value.isEmpty()) {
+                                    Toast.makeText(
+                                        context,
+                                        "Please enter the email !",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                } else if (phoneVal.value.isEmpty()) {
+                                    Toast.makeText(
+                                        context,
+                                        "Please enter the phone number !",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                } else if (passwordVal.value.isEmpty()) {
+                                    Toast.makeText(
+                                        context,
+                                        "Please enter password !",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                } else if (confirmPasswordVal.value.isEmpty()) {
+                                    Toast.makeText(
+                                        context,
+                                        "Please enter confirm password !",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                } else {
+                                    Toast.makeText(
+                                        context,
+                                        "Successfully Registered!",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
                                 }
                             },
                             colors = ButtonDefaults.buttonColors(backgroundColor = PurpleGrey80),
@@ -247,9 +269,9 @@ fun RegisterPage(navController: NavController) {
                         Spacer(modifier = Modifier.padding(20.dp))
 
                         Text(
-                            text = "Don't have an account? Register",
+                            text = "Already have an account? Login here.",
                             color = Black,
-                            modifier = Modifier.clickable { navController.navigate("register_page") })
+                            modifier = Modifier.clickable { navController.navigate("login_page") })
 
                         Spacer(modifier = Modifier.padding(20.dp))
 
