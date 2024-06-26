@@ -71,20 +71,20 @@ fun RegisterPage(navController: NavController) {
             Box(
                 modifier = Modifier
                     .background(White)
-                    .padding(5.dp),
+                    .padding(45.dp),
                 contentAlignment = Alignment.TopCenter,
             ) {
                 Image(
                     modifier = Modifier
-                        .width(400.dp)
-                        .height(350.dp),
+                        .width(250.dp)
+                        .height(200.dp),
                     painter = painterResource(R.drawable.register),
                     contentDescription = "Gif Image",
                     contentScale = ContentScale.Fit
                 )
             }
 
-            Spacer(modifier = Modifier.padding(5.dp))
+            Spacer(modifier = Modifier.padding(0.dp))
 
             Scaffold(modifier = Modifier.fillMaxSize(), scaffoldState = scaffoldState) {
                 Column(
