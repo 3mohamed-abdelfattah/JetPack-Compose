@@ -69,13 +69,13 @@ fun RegisterPage(navController: NavController) {
             Box(
                 modifier = Modifier
                     .background(White)
-                    .padding(45.dp),
+                    .padding(5.dp),
                 contentAlignment = Alignment.TopCenter,
             ) {
                 LottieAnimationRegister(
                     modifier = Modifier
-                        .width(400.dp)
-                        .height(350.dp)
+                        .width(350.dp)
+                        .height(250.dp)
                 )
             }
 
@@ -101,7 +101,7 @@ fun RegisterPage(navController: NavController) {
                     Spacer(modifier = Modifier.padding(5.dp))
 
                     Text(
-                        text = "Join our community and enjoy exclusive features !",
+                        text = "Join our community and enjoy exclusive features",
                         fontSize = 18.sp,
                         fontWeight = FontWeight.W500,
                         color = Black,
@@ -119,7 +119,7 @@ fun RegisterPage(navController: NavController) {
                             singleLine = true,
                             modifier = Modifier
                                 .fillMaxWidth(0.8f)
-                                .padding(16.dp),
+                                .padding(5.dp),
                             colors = TextFieldDefaults.outlinedTextFieldColors(
                                 unfocusedBorderColor = Gray,
                                 textColor = Black
@@ -134,7 +134,7 @@ fun RegisterPage(navController: NavController) {
                             singleLine = true,
                             modifier = Modifier
                                 .fillMaxWidth(0.8f)
-                                .padding(16.dp),
+                                .padding(5.dp),
                             colors = TextFieldDefaults.outlinedTextFieldColors(
                                 unfocusedBorderColor = Gray,
                                 textColor = Black
@@ -149,7 +149,7 @@ fun RegisterPage(navController: NavController) {
                             singleLine = true,
                             modifier = Modifier
                                 .fillMaxWidth(0.8f)
-                                .padding(16.dp),
+                                .padding(5.dp),
                             colors = TextFieldDefaults.outlinedTextFieldColors(
                                 unfocusedBorderColor = Gray,
                                 textColor = Black
@@ -175,7 +175,7 @@ fun RegisterPage(navController: NavController) {
                             },
                             modifier = Modifier
                                 .fillMaxWidth(0.8f)
-                                .padding(16.dp),
+                                .padding(5.dp),
                             colors = TextFieldDefaults.outlinedTextFieldColors(
                                 unfocusedBorderColor = Gray,
                                 textColor = Black,
@@ -203,7 +203,7 @@ fun RegisterPage(navController: NavController) {
                             },
                             modifier = Modifier
                                 .fillMaxWidth(0.8f)
-                                .padding(16.dp),
+                                .padding(5.dp),
                             colors = TextFieldDefaults.outlinedTextFieldColors(
                                 unfocusedBorderColor = Gray,
                                 textColor = Black,

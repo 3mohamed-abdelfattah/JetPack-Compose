@@ -10,6 +10,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.jetpack_compose.ui.theme.JetPackComposeTheme
 import com.example.jetpack_compose.view.LoginPage
+import com.example.jetpack_compose.view.RegisterPage
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,5 +29,6 @@ fun NavigatePage() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = "login_page", builder = {
         composable("login_page", content = { LoginPage(navController = navController) })
+        composable("register_page", content = { RegisterPage(navController = navController) })
     })
 }
